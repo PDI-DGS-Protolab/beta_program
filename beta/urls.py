@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, include, url
 from django.contrib.auth.views import login, logout
 
-from register.views import index, join
+from register.views import index, join, thanks
 
 import settings
 
@@ -22,8 +22,9 @@ urlpatterns = patterns('',
     ######################################################
     # VIEWS
     ######################################################
-    url(r'^$',     index),
-    url(r'^join$', join),
+    url(r'^$',       index),
+    url(r'^join$',   join),
+    url(r'^thanks$', thanks),
 
     ######################################################
     # ACCOUNTS
@@ -40,6 +41,11 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
+
+    ######################################################
+    # I18N
+    ######################################################
+    (r'^i18n/', include('django.conf.urls.i18n')),
 
     ######################################################
     # STATIC CONTENT

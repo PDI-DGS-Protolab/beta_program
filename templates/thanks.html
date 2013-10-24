@@ -100,30 +100,6 @@
     }
 </style>
 
-<script language="javascript">
-     function validate () {
-         var message = document.getElementById('message');
-
-         var re = /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/igm;
-         var email = document.join.email.value;
-
-         if (!re.test(email)) {
-             message.innerHTML = 'Invalid email!'
-             return false;
-         }
-
-         var desc = document.join.desc.value;
-
-         if (desc.length < 50 || desc.length > 250) {
-             message.innerHTML = 'Description must be longer than 50 characters and shorter than 250 characters!'
-             return false;
-         }
-
-         document.join.submit();
-         return true;
-     }
-</script>
-
 </head>
 <body bgcolor="#FFFFFF" link="#00c7d6" vlink="#00c7d6">
 
@@ -135,9 +111,9 @@
         <img src="/static/img/img.jpg" width="600" height="250" alt="Foto APPS" />
     </li>
     <li class="left">
-        <p class="verdana size-16 blue"><strong>Programa de Betas Internas</strong></p>
+        <p class="verdana size-16 blue"><strong>{% trans "Programa de Betas Internas" %}</strong></p>
 
-        <p class="verdana size-33 blue">¡Gracias por apuntarte!</p>
+        <p class="verdana size-33 blue">{% trans "¡Gracias por apuntarte!" %}</p>
         <p class="verdana size-33 green">be more beta-tester_</p>
     </li>
 

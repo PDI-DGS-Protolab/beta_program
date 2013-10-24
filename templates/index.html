@@ -9,6 +9,15 @@
 
 <style>
 
+    button {
+        border: 1px solid #025C83;
+        cursor: pointer;
+    }
+
+    input, textarea {
+        border: 1px solid #025C83
+    }
+
     body {
         color: #025c83;
     }
@@ -124,6 +133,20 @@
 <body bgcolor="#FFFFFF" link="#00c7d6" vlink="#00c7d6">
 
 <ul class="container" width="600">
+
+    <li>
+        <form action="/i18n/setlang/" method="post">{% csrf_token %}
+          <input name="next" type="hidden" value="/" />
+          <select name="language">
+            {% for lang in LANGUAGES %}
+              <option value="{{ lang.0 }}">{{ lang.1 }}</option>
+            {% endfor %}
+          </select>
+          <input type="submit" value="Go" />
+        </form>
+
+    </li>
+
     <li>
         <img src="/static/img/cabecera.jpg" width="600" height="75" alt="cabecera" />
     </li>
@@ -131,17 +154,17 @@
         <img src="/static/img/img.jpg" width="600" height="250" alt="Foto APPS" />
     </li>
     <li class="left">
-        <p class="verdana size-16 blue"><strong>Programa de Betas Internas</strong></p>
+        <p class="verdana size-16 blue"><strong>{% trans "Programa de Betas Internas" %}</strong></p>
 
-        <p class="verdana size-33 blue">Te necesitamos...</p>
+        <p class="verdana size-33 blue">{% trans "Te necesitamos..." %}</p>
         <p class="verdana size-33 green">be more beta-tester_</p>
 
-        <p class="verdana size-20 blue">Participa en el programa de Betas Internas</p>
+        <p class="verdana size-20 blue">{% trans "Participa en el Programa de Betas Internas" %}</p>
         <p class="arial size-12 blue">
-            Si eres empleado de Telefonica Digital y quieres colaborar como beta-tester de nuestros servicios,
-            preséntala al programa de betas internas enviando un correo a <strong>beta_program@tid.es</strong>. Si estás
-            entre los ganadores, conseguirás <strong>premios</strong> (ipads, wereable devices y tarjetas regalo) y lo más
-            importante nos ayudaras a <strong>mejorar la calidad de nuestros productos</strong>.
+            {% trans "Si eres empleado de Telefonica Digital y quieres colaborar como beta-tester de nuestros servicios, " %}
+            {% trans "preséntate al Programa de Betas Internas enviando un correo a <strong>beta_program@tid.es</strong>. " %}
+            {% trans "Si estás entre los ganadores, conseguirás <strong>premios</strong> (ipads, wereable devices y " %}
+            {% trans "tarjetas regalo) y lo más importante nos ayudaras a <strong>mejorar la calidad de nuestros productos</strong>." %}
         </p>
     </li>
 
@@ -154,13 +177,13 @@
             <label for="email">Email *</label><br />
             <input id="email" name="email"/> <br />
 
-            <label for="desc">Description *</label><br />
+            <label for="desc">{% trans "Descripción" %} *</label><br />
             <textarea cols="71" rows="5" id="desc" name="desc"></textarea><br />
 
-            <label for="url">Media content url</label><br />
+            <label for="url">{% trans "URL con contenido extra" %}</label><br />
             <input type="url" name="url" id="url"/><br />
 
-            <button type="button" onclick="return validate();">Enviar</button>
+            <button type="button" onclick="return validate();">{% trans "Enviar" %}</button>
         </form>
     </li>
 

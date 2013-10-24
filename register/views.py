@@ -4,6 +4,8 @@ from models import BetaTester
 from django.shortcuts import render
 from django.db import IntegrityError
 
+from django.http import HttpResponseRedirect
+
 def index(request):
     return render(request, 'index.html', {})
 
@@ -20,6 +22,9 @@ def join(request):
             except IntegrityError:
                 pass
 
-            return render(request, 'thanks.html', {})
+            return HttpResponseRedirect('/thanks')
 
-    return render(request, 'index.html', {})
+    return HttpResponseRedirect('/')
+
+def thanks(request):
+    return render(request, 'thanks.html', {})

@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 # Django settings for beta project.
 
 import os
@@ -31,11 +33,18 @@ DATABASES = {
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'Europe/Madrid'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-es'
+
+gettext = lambda s: s
+
+LANGUAGES = (
+    ('en', 'English'),
+    ('es', 'Español'),
+)
 
 SITE_ID = 1
 
@@ -49,6 +58,10 @@ USE_L10N = True
 
 # If you set this to False, Django will not use timezone-aware datetimes.
 USE_TZ = True
+
+LOCALE_PATHS = (
+    os.path.join(FOLDER, 'locale'),
+)
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
@@ -106,7 +119,9 @@ ROOT_URLCONF = 'beta.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'beta.wsgi.application'
 
-TEMPLATE_DIRS = ('/home/mac/PycharmProjects/beta/templates',)
+TEMPLATE_DIRS = (
+    os.path.join(FOLDER, 'templates'),
+)
 
 INSTALLED_APPS = (
     'django.contrib.auth',
