@@ -4,7 +4,7 @@ from django.contrib import admin
 # Create your models here.
 
 class BetaTester(models.Model):
-    email = models.EmailField(max_length=100)
+    email = models.EmailField(max_length=100, primary_key=True)
     desc  = models.CharField(max_length=100)
     url   = models.URLField(max_length=250, blank=True, null=True)
 

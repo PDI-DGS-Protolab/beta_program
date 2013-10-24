@@ -3,8 +3,6 @@
 <head>
 <title>Programa de Betas Internas</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-</head>
-<body bgcolor="#FFFFFF" link="#00c7d6" vlink="#00c7d6">
 
 <style>
     form label {
@@ -14,7 +12,38 @@
     form input, form textarea {
         margin-bottom: 10px;
     }
+
+    form #message {
+        color: red;
+    }
 </style>
+
+<script language="javascript">
+     function validate () {
+         var message = document.getElementById('message');
+
+         var re = /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/igm;
+         var email = document.join.email.value;
+
+         if (!re.test(email)) {
+             message.innerHTML = 'Invalid email!'
+             return false;
+         }
+
+         var desc = document.join.desc.value;
+
+         if (desc.length < 50) {
+             message.innerHTML = 'Description must be longer than 50 characters!'
+             return false;
+         }
+
+         document.join.submit();
+         return true;
+     }
+</script>
+
+</head>
+<body bgcolor="#FFFFFF" link="#00c7d6" vlink="#00c7d6">
 
 <table  width="600" border="0" align="center" cellpadding="0" cellspacing="0">
 				<tr>
@@ -95,7 +124,8 @@
                                         
                                         <tr>
 											<td width="auto" height="auto" valign="bottom" align="left">
-                                                <form method="post" action="/join">
+                                                <form name="join" method="post" action="/join">
+                                                    <p id="message"></p>
                                                     {% csrf_token %}
                                                     <label for="email">Email *</label><br />
                                                     <input id="email" name="email"/> <br />
@@ -106,7 +136,7 @@
                                                     <label for="url">Media content url</label><br />
                                                     <input type="url" name="url" id="url"/><br />
 
-                                                    <input type="submit" value="Enviar"/>
+                                                    <input type="submit" onclick="return validate();" value="Enviar"/>
                                                 </form>
                                             </td>
 										</tr>

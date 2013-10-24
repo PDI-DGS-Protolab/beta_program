@@ -2,6 +2,7 @@ from forms import RegisterForm
 from models import BetaTester
 
 from django.shortcuts import render
+from django.db import IntegrityError
 
 def index(request):
     return render(request, 'index.html', {})
@@ -14,7 +15,10 @@ def join(request):
             bt = BetaTester()
 
             bt.load_from_form(form)
-            bt.save()
+            try:
+                bt.save()
+            except IntegrityError:
+                pass
 
             return render(request, 'thanks.html', {})
 
