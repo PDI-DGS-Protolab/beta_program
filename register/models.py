@@ -5,7 +5,7 @@ from django.contrib import admin
 
 class BetaTester(models.Model):
     email = models.EmailField(max_length=100, primary_key=True)
-    desc  = models.CharField(max_length=100)
+    desc  = models.CharField(max_length=250)
     url   = models.URLField(max_length=250, blank=True, null=True)
 
     def load_from_form(self, form):

@@ -1,12 +1,60 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>Programa de Betas Internas</title>
+
+{% load i18n %}
+
+<title>{% trans "Programa de Betas Internas" %}</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <style>
+
+    body {
+        color: #025c83;
+    }
+
+    button {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
     form label {
         font-size: 70%;
+    }
+
+    .size-33 {
+        font-size: 33px;
+    }
+
+    .size-20 {
+        font-size: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .size-16 {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .size-12 {
+        font-size: 12px;
+    }
+
+    .blue {
+        color: #025c83;
+    }
+
+    .green {
+        color:#33AA70
+    }
+
+    .verdana {
+        font-family: "Verdana, Geneva, sans-serif"
+    }
+
+    .arial {
+        font-family: "Arial, Helvetica, sans-serif"
     }
 
     form input, form textarea {
@@ -15,6 +63,36 @@
 
     form #message {
         color: red;
+    }
+
+    form {
+        margin-top: 20px;
+    }
+
+    .container {
+        list-style: none;
+        text-align: center;
+        width: 600px;
+        margin: auto;
+    }
+
+    .left {
+        text-align: left;
+    }
+
+    ul, li {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    p {
+        padding: 0px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .footer {
+        margin-bottom: 100px;
     }
 </style>
 
@@ -32,8 +110,8 @@
 
          var desc = document.join.desc.value;
 
-         if (desc.length < 50) {
-             message.innerHTML = 'Description must be longer than 50 characters!'
+         if (desc.length < 50 || desc.length > 250) {
+             message.innerHTML = 'Description must be longer than 50 characters and shorter than 250 characters!'
              return false;
          }
 
@@ -45,217 +123,52 @@
 </head>
 <body bgcolor="#FFFFFF" link="#00c7d6" vlink="#00c7d6">
 
-<table  width="600" border="0" align="center" cellpadding="0" cellspacing="0">
-				<tr>
-					<td>
-						<table width="600" border="0" cellspacing="0" cellpadding="0" bgcolor="#025c83" align="center">
-      				<tr>
-        				<td height="2" width="600" align="left"></td>
-						  </tr>
-						</table>
-					</td>
-				</tr>
-                         
-<tr>
-	<td>
-		<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
-							<tr>
-                <td width="600" height="20"><img src="/static/img/cabecera.jpg" width="600" height="75" alt="cabecera" /></td>
-							</tr>
-		</table>
-	</td>
-</tr>  
-<tr>
-	<td>
-		<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
-							<tr>
-                <td width="600" height="250"><img src="/static/img/img.jpg" width="600" height="250" alt="Foto APPS" /></td>
-							</tr>
-		</table>
-	</td>
-</tr> 
+<ul class="container" width="600">
+    <li>
+        <img src="/static/img/cabecera.jpg" width="600" height="75" alt="cabecera" />
+    </li>
+    <li>
+        <img src="/static/img/img.jpg" width="600" height="250" alt="Foto APPS" />
+    </li>
+    <li class="left">
+        <p class="verdana size-16 blue"><strong>Programa de Betas Internas</strong></p>
 
-<tr>
-	<td>
-		<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
-							<tr>
-                <td width="600" height="20"></td>
-							</tr>
-		</table>
-	</td>
-</tr>
-      
-            	<tr>
-					<td>
-						<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
-							<tr>
-								<td width="20" height="110" align="left">&nbsp;</td>
-										<td height="110" width="440" align="left">
-                                        
-											<table width="560" border="0" align="center" cellpadding="0" cellspacing="0">
-										<tr>
-											<td width="auto" height="auto"  align="left" valign="middle" ><font face="Verdana, Geneva, sans-serif" style="font-size:33px;color:#025c83;">Te necesitamos...</font></td>
-										</tr>
-                                        <tr>
-											<td width="auto" height="auto"  align="left" valign="middle" ><font face="Verdana, Geneva, sans-serif" style="font-size:33px;color:#33AA70;">be more beta-tester_</font></td>
-										</tr>
-                                        
-                                        
-										<tr>
-											<td width="40" height="20" valign="top"></td>
-										</tr>
-                                        
-                                        <tr>
-											<td width="auto" height="auto"  align="left" valign="middle" ><font face="Verdana, Geneva, sans-serif" style="font-size:20px;color:#025c83;">Participa en el programa de Betas Internas</font></td>
-										</tr>
-                                        
-                                        
-										<tr>
-											<td width="auto" height="20" valign="top"></td>
-										</tr>
-										<tr>
-											<td width="auto" height="50" valign="top"><font face="Arial, Helvetica, sans-serif" style="font-size:12px;color:#025c83;">Si eres empleado de Telefonica Digital y quieres colaborar como beta-tester de nuestros servicios, preséntala al programa de betas internas enviando un correo a <strong>beta_program@tid.es</strong>. Si estás entre los ganadores, conseguirás <strong>premios</strong> (ipads, wereable devices y tarjetas regalo) y lo más importante nos ayudaras a <strong>mejorar la calidad de nuestros productos</strong>.
-                                           </font></td>
-										</tr>
-                                        
-                                        <tr>
-											<td width="auto" height="20" valign="top"></td>
-										</tr>
-                                        
-                                        <tr>
-											<td width="auto" height="auto" valign="bottom" align="left">
-                                                <form name="join" method="post" action="/join">
-                                                    <p id="message"></p>
-                                                    {% csrf_token %}
-                                                    <label for="email">Email *</label><br />
-                                                    <input id="email" name="email"/> <br />
+        <p class="verdana size-33 blue">Te necesitamos...</p>
+        <p class="verdana size-33 green">be more beta-tester_</p>
 
-                                                    <label for="desc">Description *</label><br />
-                                                    <textarea  cols="80" rows="5" id="desc" name="desc"></textarea><br />
+        <p class="verdana size-20 blue">Participa en el programa de Betas Internas</p>
+        <p class="arial size-12 blue">
+            Si eres empleado de Telefonica Digital y quieres colaborar como beta-tester de nuestros servicios,
+            preséntala al programa de betas internas enviando un correo a <strong>beta_program@tid.es</strong>. Si estás
+            entre los ganadores, conseguirás <strong>premios</strong> (ipads, wereable devices y tarjetas regalo) y lo más
+            importante nos ayudaras a <strong>mejorar la calidad de nuestros productos</strong>.
+        </p>
+    </li>
 
-                                                    <label for="url">Media content url</label><br />
-                                                    <input type="url" name="url" id="url"/><br />
+    <li class="left">
+        <form name="join" method="post" action="/join">
+            <p id="message"></p>
 
-                                                    <input type="submit" onclick="return validate();" value="Enviar"/>
-                                                </form>
-                                            </td>
-										</tr>
-                                        
-                                         <tr>
-											<td width="auto" height="20" valign="top"></td>
-										</tr>
-                                        
-										<tr>
-											<td width="auto" height="auto" valign="bottom" align="left"><font face="Arial, Helvetica, sans-serif" style="font-size:12px; color:#025c83; ">Telefónica I+D</font></td>
-										</tr>
-                                        
-                                        <tr>
-											<td width="auto" height="auto" valign="bottom" align="left"><font face="Arial, Helvetica, sans-serif" style="font-size:12px; color:#33AA70; "><strong>Move fast, launch early and take risks_</strong></font></td>
-										</tr>
-                                        
-                                        <tr>
-							                Programa de Betas Internas				<td width="auto" height="20" valign="top"></td>
-										</tr>
-                                        
-                                        <tr>
+            {% csrf_token %}
 
-										</tr>
-                                        
-                                      
-                                         
-                                        
-                                         <tr>
-											<td width="auto" height="20" valign="top"></td>
-										</tr>
-									
-                                    
-                                    
-                                    </table>
-                                    
-                                    
-                                    
-								</td>
-								<td width="20" height="110" align="left"></td>
-							</tr>
-                            
-                            
-						</table>
-					</td>
-				</tr> 
+            <label for="email">Email *</label><br />
+            <input id="email" name="email"/> <br />
 
-      
-<tr>
-	<td>
-		<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
-							<tr>
-                <td width="600" height="20"></td>
-							</tr>
-                           
-                    
-                            
-		</table>
-	</td>
-</tr>  
+            <label for="desc">Description *</label><br />
+            <textarea cols="71" rows="5" id="desc" name="desc"></textarea><br />
 
-            	<tr>
-					<td>
-					  <table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
-							<tr>
-								<td width="20" height="110" align="left">&nbsp;</td>
-										<td height="110" width="440" align="left">
-                                        
-											<table width="560" border="0" align="center" cellpadding="0" cellspacing="0">
-									
-                                        
-                                        
-										<tr>
-											<td width="auto" height="20" valign="top"></td>
-										</tr>
+            <label for="url">Media content url</label><br />
+            <input type="url" name="url" id="url"/><br />
 
-                                        
-                                        <tr>
-											<td width="auto" height="10" valign="top"></td>
-										</tr>
-                                        
+            <button type="button" onclick="return validate();">Enviar</button>
+        </form>
+    </li>
 
-                                        
-                                         <tr>
-											<td width="auto" height="10" valign="top"></td>
-										</tr>
-                                        
-
-                                        
-                                           <tr>
-											<td width="auto" height="10" valign="top"></td>
-										</tr>
-                                        
-
-                                        
-                                      
-                                        
-                                        <tr>
-											<td width="auto" height="20" valign="top">&nbsp;</td>
-										</tr>
-									
-                                    
-                                    
-                                    </table>
-                                    
-                                    
-                                    
-								</td>
-								<td width="20" height="110" align="left"></td>
-							</tr>
-                            
-                            
-						</table>
-
-
-					</td>
-				</tr>
-
-</table>
-
+    <li class="left footer">
+        <p class="arial size-12 blue">Telefónica I+D</p>
+        <p class="arial size-12 green"><strong>Move fast, launch early and take risks_</strong></p>
+    </li>
+</ul>
 
 </body>
 </html>

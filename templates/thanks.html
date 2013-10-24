@@ -1,167 +1,154 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>Programa de Betas Internas</title>
+
+{% load i18n %}
+
+<title>{% trans "Programa de Betas Internas" %}</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-</head>
-<body bgcolor="#FFFFFF" link="#00c7d6" vlink="#00c7d6">
 
 <style>
+
+    body {
+        color: #025c83;
+    }
+
+    button {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
     form label {
         font-size: 70%;
+    }
+
+    .size-33 {
+        font-size: 33px;
+    }
+
+    .size-20 {
+        font-size: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .size-16 {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .size-12 {
+        font-size: 12px;
+    }
+
+    .blue {
+        color: #025c83;
+    }
+
+    .green {
+        color:#33AA70
+    }
+
+    .verdana {
+        font-family: "Verdana, Geneva, sans-serif"
+    }
+
+    .arial {
+        font-family: "Arial, Helvetica, sans-serif"
     }
 
     form input, form textarea {
         margin-bottom: 10px;
     }
+
+    form #message {
+        color: red;
+    }
+
+    form {
+        margin-top: 20px;
+    }
+
+    .container {
+        list-style: none;
+        text-align: center;
+        width: 600px;
+        margin: auto;
+    }
+
+    .left {
+        text-align: left;
+    }
+
+    ul, li {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    p {
+        padding: 0px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .footer {
+        margin-bottom: 100px;
+    }
+
+    .margin {
+        margin-top: 40px;
+    }
 </style>
 
-<table  width="600" border="0" align="center" cellpadding="0" cellspacing="0">
-				<tr>
-					<td>
-						<table width="600" border="0" cellspacing="0" cellpadding="0" bgcolor="#025c83" align="center">
-      				<tr>
-        				<td height="2" width="600" align="left"></td>
-						  </tr>
-						</table>
-					</td>
-				</tr>
-                         
-<tr>
-	<td>
-		<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
-							<tr>
-                <td width="600" height="20"><img src="/static/img/cabecera.jpg" width="600" height="75" alt="cabecera" /></td>
-							</tr>
-		</table>
-	</td>
-</tr>  
-<tr>
-	<td>
-		<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
-							<tr>
-                <td width="600" height="250"><img src="/static/img/img.jpg" width="600" height="250" alt="Foto APPS" /></td>
-							</tr>
-		</table>
-	</td>
-</tr> 
+<script language="javascript">
+     function validate () {
+         var message = document.getElementById('message');
 
-<tr>
-	<td>
-		<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
-							<tr>
-                <td width="600" height="20"></td>
-							</tr>
-		</table>
-	</td>
-</tr>
-      
-            	<tr>
-					<td>
-						<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
-							<tr>
-								<td width="20" height="110" align="left">&nbsp;</td>
-										<td height="110" width="440" align="left">
-                                        
-											<table width="560" border="0" align="center" cellpadding="0" cellspacing="0">
-										<tr>
-											<td width="auto" height="auto"  align="left" valign="middle" ><font face="Verdana, Geneva, sans-serif" style="font-size:33px;color:#025c83;">¡Gracias por apuntarte!</font></td>
-										</tr>
-                                        <tr>
-											<td width="auto" height="auto"  align="left" valign="middle" ><font face="Verdana, Geneva, sans-serif" style="font-size:33px;color:#33AA70;">be more beta-tester_</font></td>
-										</tr>
-                                        
-                                        
+         var re = /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/igm;
+         var email = document.join.email.value;
 
-									
-                                    
-                                    
-                                    </table>
-                                    
-                                    
-                                    
-								</td>
-								<td width="20" height="110" align="left"></td>
-							</tr>
-                            
-                            
-						</table>
-					</td>
-				</tr> 
+         if (!re.test(email)) {
+             message.innerHTML = 'Invalid email!'
+             return false;
+         }
 
-      
-<tr>
-	<td>
-		<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
-							<tr>
-                <td width="600" height="20"></td>
-							</tr>
-                           
-                    
-                            
-		</table>
-	</td>
-</tr>  
+         var desc = document.join.desc.value;
 
-            	<tr>
-					<td>
-					  <table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
-							<tr>
-								<td width="20" height="110" align="left">&nbsp;</td>
-										<td height="110" width="440" align="left">
-                                        
-											<table width="560" border="0" align="center" cellpadding="0" cellspacing="0">
-									
-                                        
-                                        
-										<tr>
-											<td width="auto" height="20" valign="top"></td>
-										</tr>
+         if (desc.length < 50 || desc.length > 250) {
+             message.innerHTML = 'Description must be longer than 50 characters and shorter than 250 characters!'
+             return false;
+         }
 
-                                        
-                                        <tr>
-											<td width="auto" height="10" valign="top"></td>
-										</tr>
-                                        
+         document.join.submit();
+         return true;
+     }
+</script>
 
-                                        
-                                         <tr>
-											<td width="auto" height="10" valign="top"></td>
-										</tr>
-                                        
+</head>
+<body bgcolor="#FFFFFF" link="#00c7d6" vlink="#00c7d6">
 
-                                        
-                                           <tr>
-											<td width="auto" height="10" valign="top"></td>
-										</tr>
-                                        
+<ul class="container" width="600">
+    <li>
+        <img src="/static/img/cabecera.jpg" width="600" height="75" alt="cabecera" />
+    </li>
+    <li>
+        <img src="/static/img/img.jpg" width="600" height="250" alt="Foto APPS" />
+    </li>
+    <li class="left">
+        <p class="verdana size-16 blue"><strong>Programa de Betas Internas</strong></p>
 
-                                        
-                                      
-                                        
-                                        <tr>
-											<td width="auto" height="20" valign="top">&nbsp;</td>
-										</tr>
-									
-                                    
-                                    
-                                    </table>
-                                    
-                                    
-                                    
-								</td>
-								<td width="20" height="110" align="left"></td>
-							</tr>
-                            
-                            
-						</table>
+        <p class="verdana size-33 blue">¡Gracias por apuntarte!</p>
+        <p class="verdana size-33 green">be more beta-tester_</p>
+    </li>
 
+    <li class="margin">
+    </li>
 
-					</td>
-				</tr>
-
-</table>
-
+    <li class="left footer">
+        <p class="arial size-12 blue">Telefónica I+D</p>
+        <p class="arial size-12 green"><strong>Move fast, launch early and take risks_</strong></p>
+    </li>
+</ul>
 
 </body>
 </html>
