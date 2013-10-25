@@ -50,6 +50,10 @@
         font-size: 12px;
     }
 
+    .size-0 {
+        font-size: 0px;
+    }
+
     .blue {
         color: #025c83;
     }
@@ -89,6 +93,14 @@
         text-align: left;
     }
 
+    .right {
+        text-align: right;
+    }
+
+    .bottom {
+        margin-bottom: 30px;
+    }
+
     ul, li {
         padding: 0px;
         margin: 0px;
@@ -103,6 +115,26 @@
     .footer {
         margin-bottom: 100px;
     }
+
+    .float {
+        float: left;
+    }
+
+    .clear {
+        clear: both;
+    }
+
+    .beta-type img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .beta-type p {
+        width: 350px;
+        margin-top: 20px;
+        margin-left: 30px;
+    }
+
 </style>
 
 <script language="javascript">
@@ -132,9 +164,9 @@
 </head>
 <body bgcolor="#FFFFFF" link="#00c7d6" vlink="#00c7d6">
 
-<ul class="container" width="600">
+<ul class="container size-0" width="600">
 
-    <li>
+    <li class="right">
         <form action="/i18n/setlang/" method="post">{% csrf_token %}
           <input name="next" type="hidden" value="/" />
           <select name="language">
@@ -153,9 +185,8 @@
     <li>
         <img src="/static/img/img.jpg" width="600" height="250" alt="Foto APPS" />
     </li>
-    <li class="left">
-        <p class="verdana size-16 blue"><strong>{% trans "Programa de Betas Internas" %}</strong></p>
 
+    <li class="left bottom">
         <p class="verdana size-33 blue">{% trans "Te necesitamos..." %}</p>
         <p class="verdana size-33 green">be more beta-tester_</p>
 
@@ -168,26 +199,17 @@
         </p>
     </li>
 
-    <li class="left">
-        <form name="join" method="post" action="/join">
-            <p id="message"></p>
-
-            {% csrf_token %}
-
-            <label for="email">Email *</label><br />
-            <input id="email" name="email"/> <br />
-
-            <label for="desc">{% trans "Descripción" %} *</label><br />
-            <textarea cols="71" rows="5" id="desc" name="desc"></textarea><br />
-
-            <label for="url">{% trans "URL con contenido extra" %}</label><br />
-            <input type="url" name="url" id="url"/><br />
-
-            <button type="button" onclick="return validate();">{% trans "Enviar" %}</button>
-        </form>
+    <li class="beta-type left float clear size-16 clear">
+        <a target="_blank" href="https://zonabeta.movistar.es/todas-las-betas/internet/mi-taller-de-marketing"><img class="float" src="/static/img/artistic.jpg"></a>
+        <p class="float">Texto artistica</p>
     </li>
 
-    <li class="left footer">
+    <li class="beta-type left bottom float clear size-16">
+        <a target="_blank" href="https://zonabeta.movistar.es/todas-las-betas/internet/mi-taller-de-marketing"><img class="float" src="/static/img/technical.jpg"></a>
+        <p class="float"> Texto tecnica</p>
+    </li>
+
+    <li class="left footer clear">
         <p class="arial size-12 blue">Telefónica I+D</p>
         <p class="arial size-12 green"><strong>Move fast, launch early and take risks_</strong></p>
     </li>
