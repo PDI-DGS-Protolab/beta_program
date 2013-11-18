@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-18 12:11+0100\n"
+"POT-Creation-Date: 2013-11-18 13:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,18 +27,19 @@ msgid ""
 "apps, ayúdanos a mejorar nuestro <strong>servicio Instant Servers, nuestro "
 "nuevo sistema cloud desarrollado y dirigido por Telefónica Digital</strong> ."
 msgstr ""
-"If you wish to test your technical skills and you like developing apps, "
-"please help us improving our <strong>service Instant Servers, our new cloud "
-"system developed and driven by Telefónica Digital</strong>."
+"If you wish to test your technical skills developing apps, "
+"please help us improving <strong>Instant Servers, our new cloud "
+"service developed and driven by Telefónica Digital</strong>."
 
 #: templates/index.html:190
 msgid ""
 "Desarrolla una nueva aplicación que nos permita probar un mayor número de "
 "capacidades de Instant Servers (elasticidad de computación, almacenamient, "
 "red,...) y participa en nuestro concurso. "
-msgstr "Develop a new application using a large number of Instant Servers’ "
-"capabilities (computation elasticity, storage, net,…) and participate in "
-"our contest."
+msgstr ""
+"Develop a new application using some features of Instant Servers "
+"(computation, elasticity, storage, network, etc) and participate in our "
+"contest."
 
 #: templates/index.html:191
 msgid ""
@@ -53,8 +54,8 @@ msgid ""
 "diciembre, así que no pierdas tu oportunidad y envíanos un email a "
 "<strong>beta_program@tid.es</strong> ."
 msgstr ""
-"Registration period will be open from November 18th to December 5th, "
-"so don’t miss out and send us an email to <strong>beta_program@tid.es</strong>."
+"Registration period opens from November 18th to December 5th, so "
+"don’t miss out and send us an email to <strong>beta_program@tid.es</strong>."
 
 #: templates/index.html:196
 msgid ""
@@ -64,20 +65,39 @@ msgstr ""
 "An introductory course is scheduled on December 13th for all participants. "
 
 #: templates/index.html:200
+msgid ""
+"Este programa se realiza a través del website <strong>Zona Beta de Movistar</"
+"strong>, por lo que "
+msgstr ""
+"This program runs in <strong>Movistar Zona Beta</strong> website, so"
+
+#: templates/index.html:201
+msgid "<strong>primero deberás registrarte</strong>. "
+msgstr "</strong> please, sign up first</strong>. "
+
+#: templates/index.html:202
+msgid "Una vez activada la cuenta, podrás "
+msgstr "Once your account is ready, you can "
+
+#: templates/index.html:203
+msgid "<strong>unirte al programa beta de Instant Servers</strong>. "
+msgstr "<strong>join Instant Servers beta program</strong>. "
+
+#: templates/index.html:207
 msgid "Algunos ejemplos de aplicaciones nuevas serían: "
 msgstr "Some examples of new applications would be:"
 
-#: templates/index.html:205
+#: templates/index.html:212
 msgid "Una aplicación creada con FirefoxOS usando las APIS de Instant Servers."
 msgstr "FirefoxOS app using Instant Servers APIs."
 
-#: templates/index.html:209
+#: templates/index.html:216
 msgid ""
 "Best real-time app: Incluyendo categorías de juegos online, servicios de "
 "comunicación, etc."
 msgstr "Best real-time app: Including online games, computation services, etc."
 
-#: templates/index.html:213
+#: templates/index.html:220
 msgid ""
 "Data challenge: Aplicaciones o servicios utilizando datos de Instant Servers "
 "Analytics API de una forma original y creativa."
@@ -85,23 +105,23 @@ msgstr ""
 "Data challenge: Application or service using Instant Servers Analytics API "
 "in an original and creative way."
 
-#: templates/index.html:217
+#: templates/index.html:224
 msgid "Uso del compute de Instant Servers (Obligatorio)."
 msgstr "Using compute capabilities of Instant Servers (Compulsory)"
 
-#: templates/index.html:221
+#: templates/index.html:228
 msgid "Una app móvil usando las APIS  de Instant Servers."
 msgstr "Mobile app using Instant Servers API"
 
-#: templates/index.html:226
+#: templates/index.html:233
 msgid ""
 "Estos test son parte del Programa de Betas Internas de Telefónica Digital, "
 "así que para participar debes ser empleado de Telefónica Digital. "
 msgstr ""
-"These tests are part of the Telefónica Digital’s Private Beta Program, "
-"so in order to participate you must be a Telefónica Digital employee."
+"These tests are part of the Telefónica Digital’s Private Beta Program, so in "
+"order to participate you must be a Telefónica Digital employee."
 
-#: templates/index.html:227
+#: templates/index.html:234
 msgid ""
 "Puedes encontrarnos <strong>todos los miércoles y viernes de 10 a 12 en la "
 "sala DCW1.06.E23</strong> y/o contactarnos a través de nuestro email "
@@ -109,20 +129,20 @@ msgid ""
 "te la resolveremos con detalle."
 msgstr ""
 "You can meet us <strong>every Wednesday and Friday from 10:00 to 12:00 in "
-"DCW1.06.E23 </strong> and/or contact us on our email <strong>beta_program@tid.es"
-"</strong> and we will answer in detail any question you might have."
+"DCW1.06.E23 </strong> and/or contact us on our email "
+"<strong>beta_program@tid.es</strong> and we will answer in detail any "
+"question you might have."
 
-
-#: templates/index.html:231
+#: templates/index.html:238
 msgid ""
 "Recuerda que al participar estarás ayudando a nuestro equipo de developers y "
 "tendrás el honor de ser uno de los primeros en probar las increíbles "
 "cualidades que Instant Servers puede ofrecerte. "
 msgstr ""
-"Remember that by joining you also help our developement team, be honored to "
+"Remember that by joining you also help our developement team, being honored to "
 "be one of the first testing the amazing features of Instant Servers. "
 
-#: templates/index.html:232
+#: templates/index.html:239
 msgid "¡Anímate, colabora con nosotros y muestra lo que tienes dentro!"
 msgstr "Come on, join the program and show everyone your value!"
 
