@@ -70,22 +70,10 @@
         font-family: "Arial, Helvetica, sans-serif"
     }
 
-    form input, form textarea {
-        margin-bottom: 10px;
-    }
-
-    form #message {
-        color: red;
-    }
-
-    form {
-        margin-top: 20px;
-    }
-
     .container {
         list-style: none;
         text-align: center;
-        width: 600px;
+        width: 1000px;
         margin: auto;
     }
 
@@ -97,8 +85,16 @@
         text-align: right;
     }
 
+    .top {
+        margin-top: 30px;
+    }
+
     .bottom {
         margin-bottom: 30px;
+    }
+
+    .mleft {
+        margin-left: 30px;
     }
 
     ul, li {
@@ -108,8 +104,8 @@
 
     p {
         padding: 0px;
-        margin-top: 5px;
-        margin-bottom: 5px;
+        margin-top: 15px;
+        margin-bottom: 15px;
     }
 
     .footer {
@@ -164,7 +160,7 @@
 </head>
 <body bgcolor="#FFFFFF" link="#00c7d6" vlink="#00c7d6">
 
-<ul class="container size-0" width="600">
+<ul class="container size-0" width="1000">
 
     <li class="right">
         <form action="/i18n/setlang/" method="post">{% csrf_token %}
@@ -180,38 +176,67 @@
     </li>
 
     <li>
-        <img src="/static/img/cabecera.jpg" width="600" height="75" alt="cabecera" />
+        <img src="/static/img/header.jpg" width="1000px" height="125" alt="cabecera" />
     </li>
-    <li>
-        <img src="/static/img/img.jpg" width="600" height="250" alt="Foto APPS" />
+    <li style="text-align: left">
+        <img src="/static/img/main.jpg" height="420px" width="820px">
+        <img src="/static/img/banner.jpg" height="380px" width="180px">
     </li>
 
-    <li class="left bottom">
-        <p class="verdana size-33 blue">{% trans "Te necesitamos..." %}</p>
-        <p class="verdana size-33 green">be more beta-tester_</p>
+    <li class="left bottom top arial size-16 blue">
 
-        <p class="verdana size-20 blue">{% trans "Participa en el Programa de Betas Internas" %}</p>
-        <p class="arial size-12 blue">
-            {% trans "Si eres empleado de Telefonica Digital y quieres colaborar como beta-tester de nuestros servicios, " %}
-            {% trans "preséntate al Programa de Betas Internas enviando un correo a <strong>beta_program@tid.es</strong>. " %}
-            {% trans "Si estás entre los ganadores, conseguirás <strong>premios</strong> (ipads, wereable devices y " %}
-            {% trans "tarjetas regalo) y lo más importante nos ayudaras a <strong>mejorar la calidad de nuestros productos</strong>." %}
+        <p>
+            {% trans "Si quieres poner a prueba tus habilidades técnicas y te gusta desarrollar apps, ayúdanos a mejorar nuestro <strong>servicio Instant Servers, nuestro nuevo sistema cloud desarrollado y dirigido por Telefónica Digital</strong> ."%}
+            {% trans "Desarrolla una nueva aplicación que nos permita probar un mayor número de capacidades de Instant Servers (elasticidad de computación, almacenamient, red,...) y participa en nuestro concurso. "%}
+            {% trans "¡Participando puedes ganar un iPad Air, un iPad Mini con pantalla retina o una Fitbit!" %}
         </p>
-    </li>
 
-    <li class="beta-type left float clear size-16 clear">
-        <a target="_blank" href="https://zonabeta.movistar.es/todas-las-betas/internet/mi-taller-de-marketing"><img class="float" src="/static/img/artistic.jpg"></a>
-        <p class="float">Texto artistica</p>
-    </li>
+        <p>
+            {% trans "El periodo de inscripción estará abierto desde el 18 de noviembre al 5 de diciembre, así que no pierdas tu oportunidad y envíanos un email a <strong>beta_program@tid.es</strong> ." %}
+            {% trans "Un curso de iniciación será impartido a nuestros participantes el 13 de diciembre."%}
+        </p>
 
-    <li class="beta-type left bottom float clear size-16">
-        <a target="_blank" href="https://zonabeta.movistar.es/todas-las-betas/internet/mi-taller-de-marketing"><img class="float" src="/static/img/technical.jpg"></a>
-        <p class="float"> Texto tecnica</p>
+        <p>
+            {% trans "Algunos ejemplos de aplicaciones nuevas serían: "%}
+        </p>
+
+        <div class="mleft">
+            <p>
+                {% trans "Una aplicación creada con FirefoxOS usando las APIS de Instant Servers." %}
+            </p>
+
+            <p>
+                {% trans "Best real-time app: Incluyendo categorías de juegos online, servicios de comunicación, etc." %}
+            </p>
+
+            <p>
+                {% trans "Data challenge: Aplicaciones o servicios utilizando datos de Instant Servers Analytics API de una forma original y creativa." %}
+            </p>
+
+            <p>
+                {% trans "Uso del compute de Instant Servers (Obligatorio)." %}
+            </p>
+
+            <p>
+                {% trans "Una app móvil usando las APIS  de Instant Servers." %}
+            </p>
+        </div>
+
+        <p>
+            {% trans "Estos test son parte del Programa de Betas Internas de Telefónica Digital, así que para participar debes ser empleado de Telefónica Digital. " %}
+            {% trans "Puedes encontrarnos <strong>todos los miércoles y viernes de 10 a 12 en la sala DCW1.06.E23</strong> y/o contactarnos a través de nuestro email <strong>beta_program@tid.es</strong> con cualquier duda que puedas tener y te la resolveremos con detalle." %}
+        </p>
+
+        <p>
+            {% trans "Recuerda que al participar estarás ayudando a nuestro equipo de developers y tendrás el honor de ser uno de los primeros en probar las increíbles cualidades que Instant Servers puede ofrecerte. " %}
+            {% trans "¡Anímate, colabora con nosotros y muestra lo que tienes dentro!" %}
+        </p>
+
     </li>
 
     <li class="left footer clear">
-        <p class="arial size-12 blue">Telefónica I+D</p>
-        <p class="arial size-12 green"><strong>Move fast, launch early and take risks_</strong></p>
+        <img src="/static/img/be_more.jpg" width="1000px"/>
+        <img src="/static/img/footer.png" width="1000px" />
     </li>
 </ul>
 
