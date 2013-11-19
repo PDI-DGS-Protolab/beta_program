@@ -17,6 +17,11 @@ import os
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "beta.settings")
 
+
+activate_this_file = "/home/ec2-user/beta_program/venv/bin/activate_this.py"
+
+execfile(activate_this_file, dict(__file__=activate_this_file))
+
 # This application object is used by any WSGI server configured to use this
 # file. This includes Django's development server, if the WSGI_APPLICATION
 # setting points here.
